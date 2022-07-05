@@ -20,21 +20,33 @@ const uint16_t kc_min = TD(TD_MINUS_EQUAL);
 const uint16_t kc_com = TD(TD_LGUI_SYMBOL);
 
 
-const uint16_t kc_lalt = MT(MOD_LALT, KC_GRV);
+const uint16_t kc_lalt2 = MT(MOD_LALT, KC_GRV);
 
-const uint16_t kc_rsft = MT(MOD_RSFT, KC_QUOTE);
+const uint16_t kc_rsft2 = MT(MOD_RSFT, KC_QUOTE);
+const uint16_t kc_ralt2 = MT(MOD_LALT, KC_BSLS);
 
+//homerow mods
+const uint16_t kc_lgui = LGUI_T(KC_A);
+const uint16_t kc_lalt = LALT_T(KC_S);
+const uint16_t kc_lsft = LSFT_T(KC_D);
+const uint16_t kc_lctl = LCTL_T(KC_F);
+
+const uint16_t kc_rctl = RCTL_T(KC_J);
+const uint16_t kc_rsft = RSFT_T(KC_K);
+const uint16_t kc_ralt = LALT_T(KC_L); 
+const uint16_t kc_rgui = RGUI_T(KC_SCLN);
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
+
 [0] = LAYOUT_split_3x6_3(
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-    kc_lalt,    KC_Q,    KC_W,    KC_E,    KC_R, KC_T, 				            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_RALT,
+    kc_lalt2,    KC_Q,    KC_W,    KC_E,    KC_R, KC_T, 				                KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, kc_ralt2,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F, KC_G, 				            KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, kc_rsft,
+    KC_LSFT,    KC_A,    KC_S,     KC_D,   KC_F, KC_G, 				                KC_H,   KC_J, KC_K, KC_L, KC_SCLN, kc_rsft2,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V, KC_B, 				            KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, kc_min,
+    KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V, KC_B, 				                KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, kc_min,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                          LT(3,KC_ESC), KC_BSPC, KC_LGUI,      KC_ENT,  KC_SPC, LT(2,KC_TAB) 
                                     //`--------------------------'  `--------------------------'
@@ -42,9 +54,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [1] = LAYOUT_split_3x6_3(
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-    kc_lalt,    KC_Q,    KC_W,    KC_E,    KC_R, KC_T, 				            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_RALT,
+    kc_lalt2,    KC_Q,    KC_W,    KC_E,    KC_R, KC_T, 				            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, kc_ralt2,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F, KC_G, 				            KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, kc_rsft,
+    KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F, KC_G, 				            KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, kc_rsft2,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
     KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V, KC_B, 				            KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, kc_min,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -54,9 +66,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [2] = LAYOUT_split_3x6_3(
 //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     kc_lalt, KC_1,    KC_2,    KC_3,    KC_4, KC_5, 				            KC_6,    KC_7,    KC_8,    KC_9,   KC_0, KC_RALT,
+     kc_lalt2, KC_1,    KC_2,    KC_3,    KC_4, KC_5, 				            KC_6,    KC_7,    KC_8,    KC_9,   KC_0, KC_RALT,
 //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG(1), 		                KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, XXXXXXX, kc_rsft,
+     KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG(1), 		                KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, XXXXXXX, kc_rsft2,
 //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, 		                XXXXXXX, XXXXXXX, KC_COMM, KC_DOT, KC_SLSH, kc_min,
 //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -66,9 +78,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [3] = LAYOUT_split_3x6_3(
 //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     kc_lalt, KC_EXLM, KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_RALT,
+     kc_lalt2, KC_EXLM, KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_RALT,
 //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_LSFT, XXXXXXX, XXXXXXX, KC_LPRN, KC_LCBR, KC_LBRC, 		               KC_RBRC, KC_RCBR, KC_RPRN, XXXXXXX, XXXXXXX, kc_rsft,
+     KC_LSFT, XXXXXXX, XXXXXXX, KC_LPRN, KC_LCBR, KC_LBRC, 		               KC_RBRC, KC_RCBR, KC_RPRN, XXXXXXX, XXXXXXX, kc_rsft2,
 //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, 		               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, kc_min,
 //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|

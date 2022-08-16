@@ -4,10 +4,6 @@
 // Tap Dance Declarations
 enum {
 	TD_MINUS_EQUAL = 0,
-	TD_LGUI_SYMBOL = 1,
-	TD_ESC_GRV = 2,
-    TD_LAYER1 = 3,
-    TD_LAYER2 = 4
 };
 
 // Tap Dance Definitions
@@ -21,20 +17,11 @@ const uint16_t kc_com = TD(TD_LGUI_SYMBOL);
 
 
 const uint16_t kc_lalt2 = MT(MOD_LALT, KC_GRV);
+const uint16_t kc_lsft2 = MT(MOD_LSFT, KC_ESC);
+const uint16_t kc_lctl2 = MT(MOD_LCTL, KC_TAB);
 
 const uint16_t kc_rsft2 = MT(MOD_RSFT, KC_QUOTE);
 const uint16_t kc_ralt2 = MT(MOD_LALT, KC_BSLS);
-
-//homerow mods
-const uint16_t kc_lgui = LGUI_T(KC_A);
-const uint16_t kc_lalt = LALT_T(KC_S);
-const uint16_t kc_lsft = LSFT_T(KC_D);
-const uint16_t kc_lctl = LCTL_T(KC_F);
-
-const uint16_t kc_rctl = RCTL_T(KC_J);
-const uint16_t kc_rsft = RSFT_T(KC_K);
-const uint16_t kc_ralt = LALT_T(KC_L); 
-const uint16_t kc_rgui = RGUI_T(KC_SCLN);
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -44,11 +31,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
     kc_lalt2,    KC_Q,    KC_W,    KC_E,    KC_R, KC_T, 				                KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, kc_ralt2,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    KC_LSFT,    KC_A,    KC_S,     KC_D,   KC_F, KC_G, 				                KC_H,   KC_J, KC_K, KC_L, KC_SCLN, kc_rsft2,
+    kc_lsft2,    KC_A,    KC_S,     KC_D,   KC_F, KC_G, 				                KC_H,   KC_J, KC_K, KC_L, KC_SCLN, kc_rsft2,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V, KC_B, 				                KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, kc_min,
+    kc_lctl2,    KC_Z,    KC_X,    KC_C,    KC_V, KC_B, 				                KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, kc_min,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         LT(3,KC_ESC), KC_BSPC, KC_LGUI,      KC_ENT,  KC_SPC, LT(2,KC_TAB) 
+                                         MO(3), KC_BSPC, KC_LGUI,      KC_ENT,  KC_SPC, MO(2) 
                                     //`--------------------------'  `--------------------------'
 ),
 

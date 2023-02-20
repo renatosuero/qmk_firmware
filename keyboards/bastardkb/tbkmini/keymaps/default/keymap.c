@@ -17,6 +17,28 @@
 
 #include QMK_KEYBOARD_H
 
+// Tap Dance Declarations
+enum {
+	TD_MINUS_EQUAL = 0,
+};
+
+// Tap Dance Definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+    [TD_MINUS_EQUAL] = ACTION_TAP_DANCE_DOUBLE(KC_MINUS, KC_EQL),
+};
+
+// In Layer declaration, add tap dance item in place of a key code
+const uint16_t kc_min = TD(TD_MINUS_EQUAL);
+//const uint16_t kc_com = TD(TD_LGUI_SYMBOL);
+
+
+const uint16_t kc_lalt2 = MT(MOD_LALT, KC_GRV);
+const uint16_t kc_lsft2 = MT(MOD_LSFT, KC_ESC);
+const uint16_t kc_lctl2 = MT(MOD_LCTL, KC_TAB);
+
+const uint16_t kc_rsft2 = MT(MOD_RSFT, KC_QUOTE);
+const uint16_t kc_ralt2 = MT(MOD_LALT, KC_BSLS);
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [0] = LAYOUT_split_3x6_3(
